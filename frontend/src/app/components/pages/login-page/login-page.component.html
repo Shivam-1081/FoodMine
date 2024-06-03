@@ -2,18 +2,28 @@
     <div class="details">
         <app-title title="Login"></app-title>
         <form [formGroup]="loginForm" (ngSubmit)="submit()">
-        <div class="input-container">
-            <label>Email</label>
-         <div>
-            <input type="email" placeholder="Email" formControlName="email">
-         </div>
-         <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
-            <div *ngIf="fc.email.errors.required">Should not be Empty.</div>
-            <div *ngIf="fc.email.errors.email">Email is not Correct</div>
-            
-        </div>
-        </div>
-        <div class="input-container">
+         <!-- <input-container label="Email">
+         <input type="email" placeholder="email" formControlName="email">
+         <input-validation>
+         [control] ='fc.email'
+         [showsErrorWhen]='isSubmitted'
+        </input-validation>
+        </input-container> -->
+
+        <text-input
+        [control]="fc.email"
+        [showsErrorWhen]="isSubmitted"
+        type="email"
+        label="Email" ></text-input>
+
+        
+        <text-input
+        [control]="fc.password"
+        [showsErrorWhen]="isSubmitted"
+        type="password"
+        label="Password" ></text-input>
+        
+         <!-- <div class="input-container">
             <label>Password</label>
          <div>
             <input type="password" placeholder="password" formControlName="password">
@@ -21,11 +31,18 @@
          <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
             <div *ngIf="fc.password.errors.required">Should not be Empty.</div>
         </div>
-        </div>
+        </div> -->
+
+
+
+        <!-- <default-button text="Login"></default-button> -->
         <div class="button">
-             <button type="submit">Login</button> 
+            <button type="submit">Login</button>
         </div>
-          
+        <div class="register">
+            New User? &nbsp; <a routerLink="/register" [queryParams]="{returnUrl:returnUrl}">Register here</a>
+        </div>
+        
         </form>
     </div>
 </div>

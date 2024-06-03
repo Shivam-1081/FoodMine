@@ -82,15 +82,15 @@ export const sample_tags:any[]=[
 ]
 export const sample_users:any[]=[
   {
-    name:"John Doe",
-    email:"john@gmail.com",
+    name:"Shivam Singh",
+    email:"shivam@gmail.com",
     password:"12345",
     address:"Toronto On",
     isAdmin:true,
   },
   {
-    name:"Jane Doe",
-    email:"jane@gmail.com",
+    name:"XYZ",
+    email:"abc@gmail.com",
     password:"12345",
     address:"Shanghai",
     isAdmin:true,
